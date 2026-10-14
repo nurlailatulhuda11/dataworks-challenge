@@ -46,7 +46,9 @@ Jalankan semua dari akar projek.
 
 5\. `py train\_model.py` : latih dan nilai model Ridge
 
-6\. `py forecast\_template.py` : ramalan 2008-2028 untuk Case 1-10, menghasilkan `outputs/Deliverable\_filled.xlsx`
+6\.  py forecast\_template.py:amalan 2008-2028 untuk Case 1-10 (kaedah trend setiap fasa), menghasilkan `outputs/Deliverable\_filled.xlsx`
+
+py forecast\_template\_v2.py : ramalan versi 2 (jumlah cecair dan water cut), menghasilkan outputs/Deliverable\_filled\_v2.xlsx.
 
 7\. `py predict\_test\_cases.py` : ramalan validasi dan ujian, menghasilkan `outputs/validation\_predictions.csv` dan `outputs/test\_predictions.csv`
 
@@ -99,6 +101,8 @@ Backtest ramalan trend (data dipotong 2006-01-01, ramal 8 suku tahun): ralat med
 \- Ramalan 2008-2028 ialah ekstrapolasi trend 8 suku tahun terakhir, bukan simulasi reservoir. Backtest hanya menguji 2 tahun ke hadapan, jadi ketepatan untuk 20 tahun lebih rendah.
 
 \- Fasa air diramal secara berasingan daripada minyak, jadi water cut hujung tempoh mungkin terlalu tinggi.
+
+\-Air diramal melalui jumlah cecair dan water cut (dihadkan 99%). Backtest 2 tahun: ralat median v2 sedikit lebih tinggi (gas/minyak \~1.3%, air \~0.9%) berbanding kaedah lama (\~1.0% dan 0.3%), tetapi v2 dipilih kerana lebih munasabah secara fizikal untuk 20 tahun, yang tidak dapat disahkan.
 
 \- Ralat model Ridge diukur pada hujung sejarah (2008-01-01), bukan pada tempoh ramalan.
 
