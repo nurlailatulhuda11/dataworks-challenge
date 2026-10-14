@@ -1,0 +1,6 @@
+data/reservoir_cases/
+data/*.csv
+*.xlsx
+__pycache__/
+outputs/
+output/
